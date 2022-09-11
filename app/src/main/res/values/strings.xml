@@ -9,4 +9,6 @@
     <string name="critical_reading_avg_score">Critical reading avg score - %1$s</string>
     <string name="math_avg_scores">Math avg scores - %1$s</string>
     <string name="writing_avg_score">Writing avg score - %1$s</string>
+    <string name="data_not_found">Data not found</string>
+    <string name="na">NA</string>
 </resources>

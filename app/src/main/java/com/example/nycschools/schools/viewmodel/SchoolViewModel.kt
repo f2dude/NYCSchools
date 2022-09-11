@@ -1,16 +1,17 @@
 package com.example.nycschools.schools.viewmodel
 
+import android.app.Application
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
+import com.example.nycschools.R
 import com.example.nycschools.api.ApiServiceMain
 import com.example.nycschools.api.model.SchoolInfoItem
 import com.example.nycschools.api.model.SchoolList
 import com.example.nycschools.utils.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -25,8 +26,9 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class SchoolViewModel @Inject constructor(
-    private val mApiServiceMain: ApiServiceMain
-) : ViewModel() {
+    private val mApiServiceMain: ApiServiceMain,
+    application: Application
+) : AndroidViewModel(application) {
 
     // school list
     private var mSchoolList: MutableLiveData<SchoolList> = MutableLiveData()
@@ -112,8 +114,8 @@ class SchoolViewModel @Inject constructor(
      * @param notAvailable  Sample text to use
      */
     private fun generateSchoolInfoItem(
-        schoolName: String = "Data not found",
-        notAvailable: String = "NA"
+        schoolName: String = getApplication<Application>().getString(R.string.data_not_found),
+        notAvailable: String = getApplication<Application>().getString(R.string.na)
     ): SchoolInfoItem {
         return SchoolInfoItem(
             dbn = notAvailable,
