@@ -23,6 +23,9 @@ import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
 import java.net.HttpURLConnection
 
+/**
+ * School view model test class
+ */
 @RunWith(MockitoJUnitRunner::class)
 class SchoolViewModelTest {
 
