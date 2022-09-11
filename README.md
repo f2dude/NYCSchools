@@ -10,3 +10,5 @@ App makes use of following tech stack:
 5. Layout binding
 6. Data binding
 7. Navigation component
+
+Tests have been written for api calls.
