@@ -11,4 +11,5 @@
     <string name="writing_avg_score">Writing avg score - %1$s</string>
     <string name="data_not_found">Data not found</string>
     <string name="na">NA</string>
+    <string name="school_list_not_shown">School list could not be shown!</string>
 </resources>

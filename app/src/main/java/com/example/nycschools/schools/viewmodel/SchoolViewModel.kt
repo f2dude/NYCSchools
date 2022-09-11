@@ -31,8 +31,8 @@ class SchoolViewModel @Inject constructor(
 ) : AndroidViewModel(application) {
 
     // school list
-    private var mSchoolList: MutableLiveData<SchoolList> = MutableLiveData()
-    val schoolList: LiveData<SchoolList> = mSchoolList
+    private var mSchoolList: MutableLiveData<SchoolList?> = MutableLiveData()
+    val schoolList: LiveData<SchoolList?> = mSchoolList
 
     // navigation
     private var mNavigationFlow: MutableSharedFlow<Bundle> = MutableSharedFlow()
@@ -60,6 +60,8 @@ class SchoolViewModel @Inject constructor(
                         Log.d(TAG, "School list: $schoolList")
                         mSchoolList.postValue(schoolList)
                     }
+                } else {
+                    mSchoolList.postValue(null)
                 }
             } else {
                 Log.d(TAG, "Data already loaded")

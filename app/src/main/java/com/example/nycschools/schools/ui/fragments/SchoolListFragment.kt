@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -78,7 +79,12 @@ class SchoolListFragment : Fragment(), SchoolsAdapter.ClickListener {
 
             launch {
                 mViewModel.schoolList.observe(viewLifecycleOwner) { schoolList ->
-                    mAdapter.setData(schoolList)
+                    schoolList?.let {
+                        mAdapter.setData(it)
+                    } ?: run {
+                        mBinding.recyclerView.isVisible = false
+                        mBinding.schoolListEmpty.isVisible = true
+                    }
                 }
             }
 

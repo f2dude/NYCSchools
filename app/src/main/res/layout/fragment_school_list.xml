@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recycler_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".schools.ui.fragments.SchoolListFragment"
-    tools:listitem="@layout/school_item" />
+    android:layout_height="match_parent"
+    tools:context=".schools.ui.fragments.SchoolListFragment">
+
+    <TextView
+        android:id="@+id/school_list_empty"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/school_name_height"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="@integer/school_name_max_lines"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        android:text="@string/school_list_not_shown"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/school_name_text_size"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/school_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
