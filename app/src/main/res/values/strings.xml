@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NYCSchools</string>
+
+    <string name="school_list">School List</string>
+    <string name="school_data">School data</string>
+
+    <string name="sat_summary"><u>SAT summary</u></string>
+    <string name="test_takers">Test takers - %1$s</string>
+    <string name="critical_reading_avg_score">Critical reading avg score - %1$s</string>
+    <string name="math_avg_scores">Math avg scores - %1$s</string>
+    <string name="writing_avg_score">Writing avg score - %1$s</string>
+</resources>

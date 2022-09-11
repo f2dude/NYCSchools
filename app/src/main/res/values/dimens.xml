@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- padding -->
+    <dimen name="default_padding">16dp</dimen>
+
+    <!-- margin -->
+    <dimen name="default_margin_horizontal_3">24dp</dimen>
+
+    <!-- divider -->
+    <dimen name="divider_height">1dp</dimen>
+
+    <!-- school item -->
+    <dimen name="school_name_text_size">16sp</dimen>
+    <integer name="school_name_max_lines">1</integer>
+    <dimen name="school_name_height">60dp</dimen>
+
+    <!-- tool bar -->
+    <dimen name="content_inset">8dp</dimen>
+
+    <!-- school data -->
+    <dimen name="school_card_radius">20dp</dimen>
+
+</resources>
