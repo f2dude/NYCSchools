@@ -4,7 +4,6 @@ import com.example.nycschools.api.model.SchoolInfo
 import com.example.nycschools.api.model.SchoolList
 import com.example.nycschools.api.request.SchoolApi
 import retrofit2.Response
-import retrofit2.Retrofit
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -17,6 +16,10 @@ import javax.inject.Singleton
 @Singleton
 class SchoolsManager @Inject constructor(private val schoolApi: SchoolApi) {
 
+    companion object {
+        private const val ACCESS_TOKEN = "yfX7ovB47u1rth5orJ2FlpZjs"
+    }
+
 
     /**
      * Get schools list
@@ -25,7 +28,7 @@ class SchoolsManager @Inject constructor(private val schoolApi: SchoolApi) {
      */
     suspend fun getSchoolsList() =
         schoolApi.getNYCSchools(
-            token = "yfX7ovB47u1rth5orJ2FlpZjs",
+            token = ACCESS_TOKEN,
             query = "dbn,school_name",
             limit = "100",
             offset = "0"
@@ -39,6 +42,6 @@ class SchoolsManager @Inject constructor(private val schoolApi: SchoolApi) {
      * @return [Response] of type [SchoolInfo]
      */
     suspend fun getSchoolInfo(dbn: String) =
-        schoolApi.getSchoolDetails(token = "yfX7ovB47u1rth5orJ2FlpZjs", dbnValue = dbn)
+        schoolApi.getSchoolDetails(token = ACCESS_TOKEN, dbnValue = dbn)
 
 }
