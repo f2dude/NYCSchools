@@ -1,5 +1,5 @@
 # NYCSchools
-Sample Android app that makes use of following tech stack:
+Sample Android app to display New York's schools and each schools sat scores
 
 1. Kotlin programming language
 2. Jetpack Components
